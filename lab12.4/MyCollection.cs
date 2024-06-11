@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace lab12._4
 {
-    internal class MyCollection<T> : MyList<T>, IEnumerable<T>, IList<T> where T : IInit, ICloneable, new()
+    public class MyCollection<T> : MyList<T>, IEnumerable<T>, IList<T> where T : IInit, ICloneable, new()
     {
         public MyCollection() : base() { }
         public MyCollection(int size) : base(size) { count = size; }
