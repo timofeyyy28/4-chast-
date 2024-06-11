@@ -1,8 +1,5 @@
 using ClassLibraryLabor10;
 using lab12._4;
-using labor121;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
 namespace TestProject1
 {
     [TestClass]

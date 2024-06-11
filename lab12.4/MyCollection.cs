@@ -1,8 +1,6 @@
 ﻿using ClassLibraryLabor10;
 using labor121;
-using System;
 using System.Collections;
-using System.Collections.Generic;
 
 namespace lab12._4
 {

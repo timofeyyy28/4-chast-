@@ -1,6 +1,5 @@
 ﻿using ClassLibraryLabor10;
 using System;
-
 namespace lab12._4
 {
     class Program
