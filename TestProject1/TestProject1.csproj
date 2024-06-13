@@ -21,11 +21,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="ClassLibraryLabor10">
-      <HintPath>..\..\..\..\OneDrive\Рабочий стол\ClassLibraryLabor10\bin\Debug\ClassLibraryLabor10.dll</HintPath>
+    <Reference Include="12.1t">
+      <HintPath>..\..\12.1t\12.1t\bin\Debug\net8.0\12.1t.dll</HintPath>
     </Reference>
-    <Reference Include="labor121">
-      <HintPath>..\..\labor121\labor121\bin\Debug\net8.0\labor121.dll</HintPath>
+    <Reference Include="ClassLib">
+      <HintPath>..\..\ClassLib\ClassLib\bin\Debug\net8.0\ClassLib.dll</HintPath>
     </Reference>
   </ItemGroup>
 

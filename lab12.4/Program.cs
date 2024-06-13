@@ -1,4 +1,5 @@
-﻿using ClassLibraryLabor10;
+﻿using _12._1t;
+using ClassLab;
 using System;
 namespace lab12._4
 {
@@ -39,14 +40,22 @@ namespace lab12._4
                         Console.WriteLine("Введите количество элементов:");
                         if (int.TryParse(Console.ReadLine(), out int size))
                         {
-                            myCollection = new MyCollection<Musicalinstrument>(size);
-                            Console.WriteLine("Коллекция создана.");
+                            if (size <= 0)
+                            {
+                                Console.WriteLine("Некорректный ввод. Длина коллекции должна быть больше 0.");
+                            }
+                            else
+                            {
+                                myCollection = new MyCollection<Musicalinstrument>(size);
+                                Console.WriteLine("Коллекция создана.");
+                            }
                         }
                         else
                         {
                             Console.WriteLine("Некорректный ввод.");
                         }
                         break;
+
 
                     case 2:
                         if (myCollection == null)
@@ -60,6 +69,11 @@ namespace lab12._4
                             {
                                 Console.WriteLine(item);
                             }
+                            //Console.WriteLine("---------");
+                            //foreach (var item in myCollection)
+                            //{
+                            //    Console.WriteLine(item);
+                            //}
                         }
                         break;
 

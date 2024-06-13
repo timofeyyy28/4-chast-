@@ -1,4 +1,5 @@
-using ClassLibraryLabor10;
+using ClassLab;
+using _12._1t;
 using lab12._4;
 namespace TestProject1
 {
@@ -9,7 +10,7 @@ namespace TestProject1
         public void Add_AddsItem_CountIncreases()
         {
             var collection = new MyCollection<Musicalinstrument>();
-            var instrument = new Musicalinstrument("Piano", 1);
+            var instrument = new Musicalinstrument("Инструмент №2", 1);
             collection.Add(instrument);
             Assert.AreEqual(1, collection.Count);
         }
@@ -18,8 +19,8 @@ namespace TestProject1
         public void RemoveAt_RemoveAtIndex_ElementRemoved()
         {
             var collection = new MyCollection<Musicalinstrument>();
-            var instrument1 = new Musicalinstrument("Guitar", 1);
-            var instrument2 = new Musicalinstrument("Violin", 2);
+            var instrument1 = new Musicalinstrument("Инструмент №3", 1);
+            var instrument2 = new Musicalinstrument("Инструмент №2", 2);
             collection.Add(instrument1);
             collection.Add(instrument2);
             collection.RemoveAt(0);
@@ -31,8 +32,8 @@ namespace TestProject1
         public void IndexOf_ItemExists_ReturnsCorrectIndex()
         {
             var collection = new MyCollection<Musicalinstrument>();
-            var instrument1 = new Musicalinstrument("Drums", 1);
-            var instrument2 = new Musicalinstrument("Flute", 2);
+            var instrument1 = new Musicalinstrument("Инструмент №1", 1);
+            var instrument2 = new Musicalinstrument("Инструмент №2", 2);
             collection.Add(instrument1);
             collection.Add(instrument2);
             int index = collection.IndexOf(instrument2);
@@ -43,11 +44,11 @@ namespace TestProject1
         public void IndexOf_ItemDoesNotExist_ReturnsNegativeOne()
         {
             var collection = new MyCollection<Musicalinstrument>();
-            var instrument1 = new Musicalinstrument("Saxophone", 1);
-            var instrument2 = new Musicalinstrument("Trumpet", 2);
+            var instrument1 = new Musicalinstrument("Инструмент №2", 1);
+            var instrument2 = new Musicalinstrument("Инструмент №3", 2);
             collection.Add(instrument1);
             collection.Add(instrument2);
-            var instrument3 = new Musicalinstrument("Trombone", 3);
+            var instrument3 = new Musicalinstrument("Инструмент №4", 3);
             int index = collection.IndexOf(instrument3);
             Assert.AreEqual(-1, index);
         }
@@ -56,11 +57,11 @@ namespace TestProject1
         public void Insert_InsertsItemAtIndex()
         {
             var collection = new MyCollection<Musicalinstrument>();
-            var instrument1 = new Musicalinstrument("Keyboard", 1);
-            var instrument2 = new Musicalinstrument("Harp", 2);
+            var instrument1 = new Musicalinstrument("Инструмент №5", 1);
+            var instrument2 = new Musicalinstrument("Инструмент №6", 2);
             collection.Add(instrument1);
             collection.Add(instrument2);
-            var instrument3 = new Musicalinstrument("Accordion", 3);
+            var instrument3 = new Musicalinstrument("Инструмент №7", 3);
             collection.Insert(1, instrument3);
             Assert.AreEqual(instrument3, collection[1]);
         }
@@ -69,8 +70,8 @@ namespace TestProject1
         public void Contains_ItemExists_ReturnsTrue()
         {
             var collection = new MyCollection<Musicalinstrument>();
-            var instrument1 = new Musicalinstrument("Xylophone", 1);
-            var instrument2 = new Musicalinstrument("Cello", 2);
+            var instrument1 = new Musicalinstrument("Инструмент №2", 1);
+            var instrument2 = new Musicalinstrument("Инструмент №3", 2);
             collection.Add(instrument1);
             collection.Add(instrument2);
             bool contains = collection.Contains(instrument2);
@@ -81,8 +82,8 @@ namespace TestProject1
         public void Contains_ItemDoesNotExist_ReturnsFalse()
         {
             var collection = new MyCollection<Musicalinstrument>();
-            var instrument1 = new Musicalinstrument("Banjo", 1);
-            var instrument2 = new Musicalinstrument("Double Bass", 2);
+            var instrument1 = new Musicalinstrument("Инструмент №5", 1);
+            var instrument2 = new Musicalinstrument("Инструмент №6", 2);
             collection.Add(instrument1);
             bool contains = collection.Contains(instrument2);
             Assert.IsFalse(contains);
@@ -92,8 +93,8 @@ namespace TestProject1
         public void CopyTo_CopiesItemsToArray()
         {
             var collection = new MyCollection<Musicalinstrument>();
-            var instrument1 = new Musicalinstrument("Mandolin", 1);
-            var instrument2 = new Musicalinstrument("Bagpipe", 2);
+            var instrument1 = new Musicalinstrument("Инструмент №2", 1);
+            var instrument2 = new Musicalinstrument("Инструмент №4", 2);
             collection.Add(instrument1);
             collection.Add(instrument2);
             Musicalinstrument[] array = new Musicalinstrument[2];
@@ -105,8 +106,8 @@ namespace TestProject1
         public void Remove_RemovesItem_ReturnsTrue()
         {
             var collection = new MyCollection<Musicalinstrument>();
-            var instrument1 = new Musicalinstrument("Tuba", 1);
-            var instrument2 = new Musicalinstrument("Harmonica", 2);
+            var instrument1 = new Musicalinstrument("Инструмент №2", 1);
+            var instrument2 = new Musicalinstrument("Инструмент №5", 2);
             collection.Add(instrument1);
             collection.Add(instrument2);
             bool removed = collection.Remove(instrument2);
@@ -118,8 +119,8 @@ namespace TestProject1
         public void Remove_ItemDoesNotExist_ReturnsFalse()
         {
             var collection = new MyCollection<Musicalinstrument>();
-            var instrument1 = new Musicalinstrument("Organ", 1);
-            var instrument2 = new Musicalinstrument("Synthesizer", 2);
+            var instrument1 = new Musicalinstrument("Инструмент №3", 1);
+            var instrument2 = new Musicalinstrument("Инструмент №6", 2);
             collection.Add(instrument1);
             bool removed = collection.Remove(instrument2);
             Assert.IsFalse(removed);
@@ -129,8 +130,8 @@ namespace TestProject1
         public void GetEnumerator_MoveNext_ReturnsCorrectOrder()
         {
             var collection = new MyCollection<Musicalinstrument>();
-            var instrument1 = new Musicalinstrument("Piano", 1);
-            var instrument2 = new Musicalinstrument("Guitar", 2);
+            var instrument1 = new Musicalinstrument("Инструмент №2", 1);
+            var instrument2 = new Musicalinstrument("Инструмент №3", 2);
             collection.Add(instrument1);
             collection.Add(instrument2);
 
@@ -146,8 +147,8 @@ namespace TestProject1
         public void GetEnumerator_Reset_ReturnsToInitialState()
         {
             var collection = new MyCollection<Musicalinstrument>();
-            var instrument1 = new Musicalinstrument("Piano", 1);
-            var instrument2 = new Musicalinstrument("Guitar", 2);
+            var instrument1 = new Musicalinstrument("Инструмент №1", 1);
+            var instrument2 = new Musicalinstrument("Инструмент №2", 2);
             collection.Add(instrument1);
             collection.Add(instrument2);
 
@@ -163,9 +164,9 @@ namespace TestProject1
         public void Insert_InsertsItemAtEnd()
         {
             var collection = new MyCollection<Musicalinstrument>();
-            var instrument1 = new Musicalinstrument("Piano", 1);
-            var instrument2 = new Musicalinstrument("Guitar", 2);
-            var instrument3 = new Musicalinstrument("Violin", 3);
+            var instrument1 = new Musicalinstrument("Инструмент №1", 1);
+            var instrument2 = new Musicalinstrument("Инструмент №2", 2);
+            var instrument3 = new Musicalinstrument("Инструмент №3", 3);
 
             collection.Add(instrument1);
             collection.Add(instrument2);
@@ -180,9 +181,9 @@ namespace TestProject1
         public void RemoveAt_RemovesItemAtBeginning()
         {
             var collection = new MyCollection<Musicalinstrument>();
-            var instrument1 = new Musicalinstrument("Piano", 1);
-            var instrument2 = new Musicalinstrument("Guitar", 2);
-            var instrument3 = new Musicalinstrument("Violin", 3);
+            var instrument1 = new Musicalinstrument("Инструмент №2", 1);
+            var instrument2 = new Musicalinstrument("Инструмент №3", 2);
+            var instrument3 = new Musicalinstrument("Инструмент №4", 3);
 
             collection.Add(instrument1);
             collection.Add(instrument2);
@@ -199,9 +200,9 @@ namespace TestProject1
         public void RemoveAt_RemovesItemAtEnd()
         {
             var collection = new MyCollection<Musicalinstrument>();
-            var instrument1 = new Musicalinstrument("Piano", 1);
-            var instrument2 = new Musicalinstrument("Guitar", 2);
-            var instrument3 = new Musicalinstrument("Violin", 3);
+            var instrument1 = new Musicalinstrument("Инструмент №2", 1);
+            var instrument2 = new Musicalinstrument("Инструмент №4", 2);
+            var instrument3 = new Musicalinstrument("Инструмент №6", 3);
 
             collection.Add(instrument1);
             collection.Add(instrument2);
@@ -217,9 +218,9 @@ namespace TestProject1
         public void Remove_RemoveMultipleItems_CountDecreases()
         {
             var collection = new MyCollection<Musicalinstrument>();
-            var instrument1 = new Musicalinstrument("Piano", 1);
-            var instrument2 = new Musicalinstrument("Guitar", 2);
-            var instrument3 = new Musicalinstrument("Violin", 3);
+            var instrument1 = new Musicalinstrument("Инструмент №5", 1);
+            var instrument2 = new Musicalinstrument("Инструмент №6", 2);
+            var instrument3 = new Musicalinstrument("Инструмент №7", 3);
 
             collection.Add(instrument1);
             collection.Add(instrument2);
@@ -237,9 +238,9 @@ namespace TestProject1
         public void Insert_InsertsItemAtBeginning()
         {
             var collection = new MyCollection<Musicalinstrument>();
-            var instrument1 = new Musicalinstrument("Piano", 1);
-            var instrument2 = new Musicalinstrument("Guitar", 2);
-            var instrument3 = new Musicalinstrument("Violin", 3);
+            var instrument1 = new Musicalinstrument("Инструмент №2", 1);
+            var instrument2 = new Musicalinstrument("Инструмент №4", 2);
+            var instrument3 = new Musicalinstrument("Инструмент №5", 3);
 
             collection.Add(instrument2);
             collection.Add(instrument3);
